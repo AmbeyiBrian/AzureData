@@ -1,0 +1,9 @@
+{
+	"name": "ADFBrianAmbeyi",
+	"location": "southafricanorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9d3e16c2-2246-4043-871f-3ca41527dc31",
+		"tenantId": "04875789-0037-4361-9b36-96abe6cfb38c"
+	}
+}
