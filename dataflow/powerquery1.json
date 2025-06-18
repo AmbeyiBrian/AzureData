@@ -1,0 +1,20 @@
+{
+	"name": "powerquery1",
+	"properties": {
+		"type": "WranglingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"name": "SourceDataset_g3n",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~>  SourceDataset_g3n",
+					"dataset": {
+						"referenceName": "SourceDataset_g3n",
+						"type": "DatasetReference"
+					}
+				}
+			],
+			"script": "section Section1;\r\nshared SourceDataset_g3n = let AdfDoc = AzureStorage.BlobContents(\"https://ambeyidatalake.blob.core.windows.net/input/population_distribution.xlsx\"), Excel = Excel.Workbook(AdfDoc),ExcelSheet = Excel{[Item=\"Population Data\",Kind=\"Sheet\"]}[Data] in ExcelSheet;\r\nshared UserQuery = let Source = #\"SourceDataset_g3n\" in Source;\r\n",
+			"documentLocale": "en-us"
+		}
+	}
+}

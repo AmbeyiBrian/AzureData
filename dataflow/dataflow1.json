@@ -3,52 +3,11 @@
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [
-				{
-					"dataset": {
-						"referenceName": "Population",
-						"type": "DatasetReference"
-					},
-					"name": "source1"
-				}
-			],
-			"sinks": [
-				{
-					"dataset": {
-						"referenceName": "DelimitedText1",
-						"type": "DatasetReference"
-					},
-					"name": "sink1"
-				}
-			],
-			"transformations": [
-				{
-					"name": "filter1"
-				}
-			],
+			"sources": [],
+			"sinks": [],
+			"transformations": [],
 			"scriptLines": [
-				"source(output(",
-				"          Region as string,",
-				"          {Age Group} as string,",
-				"          Gender as string,",
-				"          {Urban/Rural} as string,",
-				"          Population as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(Gender=='Male'||Gender=='Female') ~> filter1",
-				"filter1 sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     input(",
-				"          Prop_0 as string,",
-				"          Prop_1 as string,",
-				"          Prop_2 as string,",
-				"          Prop_3 as string,",
-				"          Prop_4 as string",
-				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				""
 			]
 		}
 	}
